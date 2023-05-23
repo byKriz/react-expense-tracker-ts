@@ -1,6 +1,9 @@
+import { GlobalProvider } from "./context";
 
 export const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <GlobalProvider>
+      <h1>Hello World</h1>
+    </GlobalProvider>
+  );
+};
