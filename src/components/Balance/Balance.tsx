@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { Context } from "../../context";
+import { useGlobalState } from "../../hooks/GlobalState/GlobalState";
 
 export const Balance = () => {
-  const data = useContext(Context);
+  const data = useGlobalState();
 
   return (
     <div>

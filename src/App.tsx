@@ -1,7 +1,7 @@
-import { GlobalProvider } from "./context";
-import { Header } from "./components/Header";
-import { Balance } from "./components/Balance";
-import { TransactionForm } from "./components/TransactionForm";
+import { GlobalProvider } from "./context/Context";
+import { Header } from "./components/Header/Header";
+import { Balance } from "./components/Balance/Balance";
+import { TransactionForm } from "./components/TransactionForm/TransactionForm";
 
 export const App = () => {
   return (

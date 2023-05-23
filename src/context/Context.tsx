@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import { ContextValueType } from "../models/ContextType";
+import { ContextValueType } from "../models/ContextType/ContextType";
 
 interface Props {
   children: React.ReactNode;
