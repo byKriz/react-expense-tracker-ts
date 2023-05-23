@@ -1,12 +1,30 @@
-import React, { createContext } from "react";
-import { ContextValueType } from "../models/ContextType/ContextType";
+import React, { createContext, useReducer } from "react";
+import {
+  ContextValueType,
+  InitialState,
+} from "../models/ContextType/ContextType";
+import { AppReducer } from "./AppReducer";
 
 interface Props {
   children: React.ReactNode;
 }
 
-export const Context = createContext<ContextValueType>({ total: 100 });
+const initialState: InitialState = {
+  trasactions: [],
+};
+
+export const Context = createContext<ContextValueType>({
+  state: initialState,
+  dispatch: () => null,
+  transactions: [],
+});
 
 export const GlobalProvider = ({ children }: Props) => {
-  return <Context.Provider value={{ total: 100 }}>{children}</Context.Provider>;
+  const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  return (
+    <Context.Provider value={{ transactions: state.trasactions }}>
+      {children}
+    </Context.Provider>
+  );
 };
